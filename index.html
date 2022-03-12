@@ -18,7 +18,7 @@
 <body>
 
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;">
+        <form onsubmit="sendEmail(); reset();">
             <h3>GET IN TOUCH</h3>
 
             <input type="text" id="name" placeholder="Full Name" required />
@@ -38,9 +38,7 @@
         function sendEmail() {
 
             Email.send({
-                Host: "smtp.gmail.com",
-                Username: "deathbringer454@gmail.com",
-                Password: "death123#",
+                SecureToken: "a360503c-217b-48ee-a5b4-87ac9bd3595a",
                 To: 'chaudhrywasiullah807@gmail.com',
                 From: document.getElementById('email').value,
                 Subject: "New Form Submission from SAU Student",

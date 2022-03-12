@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SMTP Email Test</title>
 
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,12 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <script src="smtp.js"></script>
 </head>
 
 <body>
 
     <div class="container">
-        <form onsubmit="sendEmail(); reset();">
+        <form onsubmit="sendEmail(); reset(); return false;">
             <h3>GET IN TOUCH</h3>
 
             <input type="text" id="name" placeholder="Full Name" required />
@@ -32,13 +33,11 @@
     </div>
 
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
     <script>
         function sendEmail() {
 
             Email.send({
-                SecureToken: "a360503c-217b-48ee-a5b4-87ac9bd3595a",
+                SecureToken: "40ce4cd6-5f7f-4791-9b91-1f9f10751a92",
                 To: 'chaudhrywasiullah807@gmail.com',
                 From: document.getElementById('email').value,
                 Subject: "New Form Submission from SAU Student",

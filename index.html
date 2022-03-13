@@ -14,43 +14,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <script src="smtp.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
 
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;">
+        <form method="POST">
             <h3>GET IN TOUCH</h3>
 
-            <input type="text" id="name" placeholder="Full Name" required />
-            <input type="email" id="email" placeholder="Your Email" required />
-            <input type="number" id="wapp" placeholder="Your WhatsApp No." required />
-            <textarea name="msg" id="msg" rows="4" placeholder="How can we Help You?" required></textarea>
+            <input type="text" id="name" name="FullName" placeholder="Full Name" required />
+            <input type="email" id="email" name="Email" placeholder="Your Email" required />
+            <input type="number" id="wapp" name="WhatsAppNumber" placeholder="Your WhatsApp No." required />
+            <textarea name="Message" id="msg" rows="4" placeholder="How can we Help You?" required></textarea>
 
-            <button type="submit">Send</button>
+            <input type="button" class="btn" value="Send Email" onclick="sendEmail(); reset();" />
+
         </form>
 
+        <!-- <button type="submit" class="btn">Send</button> onsubmit="sendEmail(); reset(); return false;"  -->
     </div>
 
-
-    <script>
-        function sendEmail() {
-
-            Email.send({
-                SecureToken: "40ce4cd6-5f7f-4791-9b91-1f9f10751a92",
-                To: 'chaudhrywasiullah807@gmail.com',
-                From: document.getElementById('email').value,
-                Subject: "New Form Submission from SAU Student",
-                Body: "Name: " + document.getElementById('name').value +
-                    "<br> Email: " + document.getElementById('email').value +
-                    "<br> WhatsApp: " + document.getElementById('wapp').value +
-                    "<br> Message: " + document.getElementById('msg').value
-            }).then(
-                message => alert("Your Response has been Submitted!")
-            );
-
-        }
-    </script>
 </body>
 
 </html>

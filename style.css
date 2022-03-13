@@ -55,7 +55,7 @@ form textarea {
     resize: none;
 }
 
-form button {
+form .btn {
     padding: 1.5rem;
     margin: 2rem auto 0;
     width: 70%;
@@ -68,7 +68,7 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+form .btn:hover {
     transform: scale(1.03);
     background: #70c000;
 }
